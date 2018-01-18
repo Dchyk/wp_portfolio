@@ -1,0 +1,154 @@
+/*
+Theme Name: AW Portfolio
+Author: Alex Dzwonchyk
+Description: Responsive portfolio theme
+Version: 1.0
+*/
+
+@import 'whitespace-reset.css';
+
+/* Based on a default computed browser value of 16px in Firefox, Chrome and Safari,
+   set the html font size to 62.5% = 10px = 1rem */
+html {
+  font-size: 62.5%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h1 > a,
+h1 > a:visited {
+  text-decoration: none;
+  color: #000;
+}
+
+/* wrapper for all body content */
+
+.wrapper {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+/* header elements */
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 3rem;
+  padding: 1rem;
+}
+
+/* header__nav */
+
+.header__nav-menu {
+  font-size: 2rem;
+}
+
+.header__nav-menu > nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.header__nav-menu > nav ul li {
+  padding: 1rem;
+}
+
+.header__nav-menu > nav ul li a,
+.header__nav-menu > nav ul li a:visited {
+  color: #000;
+  text-decoration: none;
+}
+
+/* Portfolio grid */
+
+.portfolio-grid {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/* Portfolio items */
+
+.portfolio-item {
+  box-sizing: border-box;
+  max-width: 50%;
+  padding: .5rem;
+  position: relative;
+}
+
+.portfolio-item img.portfolio-thumb {
+  width: 100%;
+}
+
+.portfolio-item-overlay {
+  background: rgba(251, 209, 214, .9);
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  padding: .5rem;
+  position: absolute;
+	top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+}
+
+.portfolio-item:hover .portfolio-item-overlay {
+  display: block;
+  transition: display .5s;
+}
+
+.portfolio-item-overlay__title {
+  font-size: 5rem;
+  color: #f13c52;
+  padding: 1rem 0 0 1rem;
+}
+
+.portfolio-item-overlay__info {
+
+}
+
+/* Footer */
+
+.footer__stuff {
+  font-size: 2rem;
+  text-align: center;
+}
+
+/* Responsive styles */
+
+@media (max-width: 968px) {
+  .portfolio-grid {
+    display: block;
+  }
+  .portfolio-item {
+    display: block;
+    max-width: 100%;
+    margin-bottom: .2rem;
+  }
+  .portfolio-item img.portfolio-thumb {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    text-align: center;
+  }
+  .header__nav-menu {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  header {
+    flex-direction: column;
+  }
+}

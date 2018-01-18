@@ -1,0 +1,1 @@
+<?php echo get_the_post_thumbnail($post_id, 'thumbnail', array('class' => 'portfolio-thumb')); ?>

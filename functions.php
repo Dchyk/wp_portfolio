@@ -1,4 +1,5 @@
-<?php 
+<?php
+  // Add support for featured images
   add_theme_support( 'post-thumbnails' );
 
   // Remove thumbnail width/height in returned HTML

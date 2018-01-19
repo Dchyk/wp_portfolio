@@ -11,20 +11,28 @@ Version: 1.0
    set the html font size to 62.5% = 10px = 1rem */
 html {
   font-size: 62.5%;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Permanent Marker', cursive, Arial, Helvetica, sans-serif;
+  height: 100%;
 }
 
 h1 > a,
 h1 > a:visited {
   text-decoration: none;
-  color: #000;
+  color: #f13c52;
+}
+
+body {
+  height: 100%;
 }
 
 /* wrapper for all body content */
 
 .wrapper {
-  width: 80vw;
+  width: 80%;
   margin: 0 auto;
+  position: relative;
+  overflow: auto;
+  padding: 0 0 5rem 0;
 }
 
 /* header elements */
@@ -34,11 +42,11 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding: 2rem 0;
 }
 
 header h1 {
   font-size: 3rem;
-  padding: 1rem;
 }
 
 /* header__nav */
@@ -60,10 +68,13 @@ header h1 {
 
 .header__nav-menu > nav ul li a,
 .header__nav-menu > nav ul li a:visited {
-  color: #000;
+  color: #0267ce;
   text-decoration: none;
 }
 
+.header__nav-menu > nav ul li a:hover {
+  color: #f13c52;
+}
 /* Portfolio grid */
 
 .portfolio-grid {
@@ -77,8 +88,8 @@ header h1 {
 
 .portfolio-item {
   box-sizing: border-box;
-  max-width: 50%;
-  padding: .5rem;
+  max-width: 49%;
+  margin: .5%;
   position: relative;
 }
 
@@ -97,12 +108,13 @@ header h1 {
   left: 0;
   right: 0;
   bottom: 0;
-  display: none;
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: .5s;
 }
 
 .portfolio-item:hover .portfolio-item-overlay {
-  display: block;
-  transition: display .5s;
+  opacity: 1;
 }
 
 .portfolio-item-overlay__title {
@@ -117,6 +129,13 @@ header h1 {
 
 /* Footer */
 
+footer#portfolio-footer {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  bottom: 2rem;
+}
+
 .footer__stuff {
   font-size: 2rem;
   text-align: center;
@@ -125,13 +144,16 @@ header h1 {
 /* Responsive styles */
 
 @media (max-width: 968px) {
+  .header__nav-menu {
+    font-size: 1.8rem;
+  }
   .portfolio-grid {
     display: block;
   }
   .portfolio-item {
     display: block;
     max-width: 100%;
-    margin-bottom: .2rem;
+    margin-bottom: 1rem;
   }
   .portfolio-item img.portfolio-thumb {
     width: 100%;
@@ -141,6 +163,10 @@ header h1 {
 @media (max-width: 480px) {
   h1 {
     text-align: center;
+    font-size: 2rem;
+  }
+  .portfolio-item-overlay__title {
+    font-size: 2rem;
   }
   .header__nav-menu {
     display: block;
@@ -150,5 +176,6 @@ header h1 {
   }
   header {
     flex-direction: column;
+    padding: .5rem;
   }
 }

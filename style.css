@@ -2,7 +2,7 @@
 Theme Name: AW Portfolio
 Author: Alex Dzwonchyk
 Description: Responsive portfolio theme
-Version: 1.0
+Version: 1.0 dev
 */
 
 @import 'whitespace-reset.css';
@@ -47,6 +47,7 @@ header {
 
 header h1 {
   font-size: 3rem;
+  padding: 0 0 0 .5rem;
 }
 
 /* header__nav */
@@ -102,7 +103,6 @@ header h1 {
   box-sizing: border-box;
   height: 100%;
   width: 100%;
-  padding: .5rem;
   position: absolute;
 	top: 0;
   left: 0;
@@ -114,17 +114,13 @@ header h1 {
 }
 
 .portfolio-item:hover .portfolio-item-overlay {
-  opacity: 1;
+  opacity: .8;
 }
 
 .portfolio-item-overlay__title {
   font-size: 5rem;
   color: #f13c52;
   padding: 1rem 0 0 1rem;
-}
-
-.portfolio-item-overlay__info {
-
 }
 
 /* Footer */

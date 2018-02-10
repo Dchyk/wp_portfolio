@@ -2,8 +2,13 @@
 
   <main>
     <div class="portfolio-grid">
+      
       <?php 
-        if ( have_posts() ) : while ( have_posts() ) : the_post();
+        $category_id = get_cat_ID( 'portfolio' );
+        $catquery = new WP_Query( "cat={$category_id}" ); 
+      ?>
+      <?php 
+        if ( $catquery -> have_posts() ) : while ( $catquery -> have_posts() ) : $catquery -> the_post();
 
           get_template_part('content', get_post_format() );
 

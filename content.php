@@ -2,8 +2,10 @@
   <?php 
     echo get_the_post_thumbnail($post_id, 'thumbnail', array('class' => 'portfolio-thumb'));
 
-    global $wp_query;
-    $postid = $wp_query->post->ID;
+    // echo get_the_post_thumbnail_url($post_id);
+
+    // global $wp_query;
+    // $postid = $wp_query->post->ID;
 
     // Pull overlay color from 'overlay' meta if it is set; 
     // otherwise use the default 
@@ -13,10 +15,12 @@
     .get_post_meta($postid, 'overlay', true).
     "\">";
 
-    wp_reset_query();
+    
 
-    echo "<h1 class=\"portfolio-item-overlay__title\">".get_the_title()."</h1>";
+    echo "<h1 class=\"portfolio-item-overlay__title\">".get_the_title($postid)."</h1>";
     echo "</div></a>";
+
+    wp_reset_query();
     
   ?>
 </div>

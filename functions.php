@@ -9,4 +9,17 @@
     $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
     return $html;
   }
+
+  // Register custom footer social icons widget
+  function wpse121723_register_sidebars() {
+    register_sidebar( array(
+        'name' => 'Social Icons',
+        'id' => 'footer_social_icons',
+        'before_widget' => '<div>',
+        'after_widget' => '</div>',
+        'before_title' => '<h2 class="rounded">',
+        'after_title' => '</h2>',
+    ) );
+  }
+  add_action( 'widgets_init', 'wpse121723_register_sidebars' );
 ?>
